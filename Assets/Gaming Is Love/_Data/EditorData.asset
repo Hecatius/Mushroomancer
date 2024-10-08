@@ -21,12 +21,12 @@ MonoBehaviour:
   tabIndex: -1
   scrollY: 0
   foldoutLimit: 
-  helpDrag: 220
+  helpDrag: 56
   subSectionDrag: 250
-  tabListDrag: 250
+  tabListDrag: 216
   formulaDrag: 250
-  schematicDrag: 400
-  jumpListDrag: 112
+  schematicDrag: 243
+  jumpListDrag: 50
   dataSelectionSorting: 0
   typeDataSelectionSorting: 0
   createBackup: 1
@@ -35,7 +35,9 @@ MonoBehaviour:
   updatePrefabs: 0
   updateScenes: 0
   sceneUpdate: 
-  schematicAsset: []
+  schematicAsset:
+  - {fileID: 11400000, guid: a3cf68b09a35a48408a29525f2665cba, type: 2}
+  - {fileID: 11400000, guid: 9950a4b3575f3ee4b9776c3232a0ed34, type: 2}
   dialogueImportSettings:
     name: 
     byteData: 
@@ -45,7 +47,8 @@ MonoBehaviour:
     encrypted: 0
   variablesDefined: []
   variablesEditor: []
-  variablesSchematic: []
+  variablesSchematic:
+  - ui
   variablesScene: []
   variablesPrefab: []
   foldoutKeys: []
