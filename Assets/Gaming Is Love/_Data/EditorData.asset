@@ -16,9 +16,9 @@ MonoBehaviour:
   lastSaveFormat: 0
   lastEncrypted: 0
   editorHelpLanguageTexts: {fileID: 0}
-  section: 3
-  subSection: 5
-  tabIndex: -1
+  section: 7
+  subSection: 4
+  tabIndex: 0
   scrollY: 0
   foldoutLimit: 
   helpDrag: 56
@@ -26,7 +26,7 @@ MonoBehaviour:
   tabListDrag: 216
   formulaDrag: 250
   schematicDrag: 243
-  jumpListDrag: 50
+  jumpListDrag: 282.66663
   dataSelectionSorting: 0
   typeDataSelectionSorting: 0
   createBackup: 1
