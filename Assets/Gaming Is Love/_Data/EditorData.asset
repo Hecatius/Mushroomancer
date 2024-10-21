@@ -16,17 +16,17 @@ MonoBehaviour:
   lastSaveFormat: 0
   lastEncrypted: 0
   editorHelpLanguageTexts: {fileID: 0}
-  section: 7
-  subSection: 4
-  tabIndex: 0
+  section: 9
+  subSection: 0
+  tabIndex: -1
   scrollY: 0
   foldoutLimit: 
-  helpDrag: 56
+  helpDrag: 297
   subSectionDrag: 250
   tabListDrag: 216
   formulaDrag: 250
-  schematicDrag: 243
-  jumpListDrag: 282.66663
+  schematicDrag: 574
+  jumpListDrag: 233.66663
   dataSelectionSorting: 0
   typeDataSelectionSorting: 0
   createBackup: 1
@@ -36,8 +36,10 @@ MonoBehaviour:
   updateScenes: 0
   sceneUpdate: 
   schematicAsset:
-  - {fileID: 11400000, guid: a3cf68b09a35a48408a29525f2665cba, type: 2}
+  - {fileID: 11400000, guid: 0b5f157bc036a8645a055d655ca48594, type: 2}
   - {fileID: 11400000, guid: 9950a4b3575f3ee4b9776c3232a0ed34, type: 2}
+  - {fileID: 11400000, guid: 20abd3f46a98db24094653f79ada6c9e, type: 2}
+  - {fileID: 11400000, guid: a3cf68b09a35a48408a29525f2665cba, type: 2}
   dialogueImportSettings:
     name: 
     byteData: 
@@ -53,4 +55,6 @@ MonoBehaviour:
   variablesPrefab: []
   foldoutKeys: []
   foldoutStates: []
-  popupFavorites: []
+  popupFavorites:
+  - GamingIsLove.Makinom.BaseInputIDKeySetting:Mouse
+  - GamingIsLove.Makinom.BaseInputIDKeySetting:Key Code
