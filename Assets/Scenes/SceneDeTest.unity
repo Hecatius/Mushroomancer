@@ -988,17 +988,17 @@ MonoBehaviour:
     byteData: 
     xmlData: '<xmldata>
 
-      <_bool useAutoStopDistance="False" />
+      <_bool useAutoStopDistance="True" />
 
       <startSetting
       needed="0" >
 
-      <_float maxInteractionDistance="3" maxMouseDistance="3"
+      <_float maxInteractionDistance="3" maxMouseDistance="-1"
       />
 
-      <_bool isInteract="False" isKeyPress="False" isDrop="False" isMouseDown="False"
+      <_bool isInteract="True" isKeyPress="False" isDrop="False" isMouseDown="False"
       isMouseDrag="False" isMouseUp="False" isMouseUpAsButton="True" isMouseEnter="False"
-      isMouseOver="False" isMouseExit="False" setInteractionDistance="False" setMouseDistance="False"
+      isMouseOver="False" isMouseExit="False" setInteractionDistance="True" setMouseDistance="True"
       keyPressInTrigger="False" keyPressWhileColliding="False" startByRoot="False"
       />
 
@@ -1046,6 +1046,8 @@ MonoBehaviour:
       <_bool useMoveToInteraction="True"
       overrideInteractionRadius="False" setInteractionRadius="False" overrideStopDistance="False"
       overrideMoveToSpeed="False" />
+
+      <_asset destinationObject="0" />
 
       <moveToSpeed>
 
@@ -1096,7 +1098,8 @@ MonoBehaviour:
 
 '
     lookUp:
-      assets: []
+      assets:
+      - {fileID: 358549845}
     encrypted: 0
     stringData: 
 --- !u!1 &1578695207
