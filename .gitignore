@@ -9,6 +9,7 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Mm]emoryCaptures/
+[Uu]ser[Ss]ettings/
 
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
@@ -57,6 +58,8 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+
 
 # Crashlytics generated file
 crashlytics-build.properties
