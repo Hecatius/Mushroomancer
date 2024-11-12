@@ -1,6 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Sons.meta
 guid: d4849a461b8ca68498ef6e561a3ce950
 folderAsset: yes
+========
+guid: fa84f2b13e762f34085dfe59221562b2
+>>>>>>>> origin/main:Assets/Gaming Is Love/_Backups/638663233039123545.unitypackage.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
