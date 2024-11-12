@@ -16,17 +16,17 @@ MonoBehaviour:
   lastSaveFormat: 0
   lastEncrypted: 0
   editorHelpLanguageTexts: {fileID: 0}
-  section: 1
-  subSection: 0
-  tabIndex: -1
-  scrollY: 60
-  foldoutLimit: ORK Control Settings
-  helpDrag: 103
-  subSectionDrag: 192
-  tabListDrag: 200
+  section: 7
+  subSection: 5
+  tabIndex: 1
+  scrollY: 5100
+  foldoutLimit: 
+  helpDrag: 220
+  subSectionDrag: 250
+  tabListDrag: 250
   formulaDrag: 250
-  schematicDrag: 566
-  jumpListDrag: 187.66663
+  schematicDrag: 400
+  jumpListDrag: 50
   dataSelectionSorting: 0
   typeDataSelectionSorting: 0
   createBackup: 1
@@ -35,11 +35,7 @@ MonoBehaviour:
   updatePrefabs: 0
   updateScenes: 0
   sceneUpdate: 
-  schematicAsset:
-  - {fileID: 11400000, guid: 0b5f157bc036a8645a055d655ca48594, type: 2}
-  - {fileID: 11400000, guid: 9950a4b3575f3ee4b9776c3232a0ed34, type: 2}
-  - {fileID: 11400000, guid: 20abd3f46a98db24094653f79ada6c9e, type: 2}
-  - {fileID: 11400000, guid: a3cf68b09a35a48408a29525f2665cba, type: 2}
+  schematicAsset: []
   dialogueImportSettings:
     name: 
     byteData: 
@@ -49,12 +45,9 @@ MonoBehaviour:
     encrypted: 0
   variablesDefined: []
   variablesEditor: []
-  variablesSchematic:
-  - ui
+  variablesSchematic: []
   variablesScene: []
   variablesPrefab: []
   foldoutKeys: []
   foldoutStates: []
-  popupFavorites:
-  - GamingIsLove.Makinom.BaseInputIDKeySetting:Mouse
-  - GamingIsLove.Makinom.BaseInputIDKeySetting:Key Code
+  popupFavorites: []
