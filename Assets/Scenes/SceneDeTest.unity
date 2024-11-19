@@ -38,6 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -489,8 +490,8 @@ Transform:
   m_GameObject: {fileID: 214114800}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.73, y: 6.6, z: -39.41}
-  m_LocalScale: {x: 1, y: 1, z: 25.040575}
+  m_LocalPosition: {x: -10.73, y: 6.6, z: -43.91}
+  m_LocalScale: {x: 1, y: 1, z: 15.711001}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 478037020}
@@ -580,6 +581,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 478037020}
+  - component: {fileID: 478037022}
+  - component: {fileID: 478037021}
   m_Layer: 0
   m_Name: Mur de test
   m_TagString: Untagged
@@ -608,6 +611,60 @@ Transform:
   - {fileID: 734223212}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &478037021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478037019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -543765376, guid: 2f433824042009943be1767c00adb2ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serialize_setting:
+    name: settings
+    byteData: 
+    xmlData: '<xmldata>
+
+      <_bool usedByRaycasts="True" inChildObjects="True"
+      />
+
+      </xmldata>
+
+'
+    lookUp:
+      assets: []
+    encrypted: 0
+    stringData: 
+--- !u!114 &478037022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478037019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -814327300, guid: 2f433824042009943be1767c00adb2ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serialize_setting:
+    name: settings
+    byteData: 
+    xmlData: '<xmldata>
+
+      <_bool usedByRaycasts="True" inChildObjects="True"
+      />
+
+      </xmldata>
+
+'
+    lookUp:
+      assets: []
+    encrypted: 0
+    stringData: 
 --- !u!1 &734223211
 GameObject:
   m_ObjectHideFlags: 0
@@ -1389,6 +1446,534 @@ MonoBehaviour:
       - {fileID: 358549845}
     encrypted: 0
     stringData: 
+--- !u!1 &1057878218
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1057878221}
+  - component: {fileID: 1057878220}
+  - component: {fileID: 1057878219}
+  m_Layer: 2
+  m_Name: Ennemis Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!135 &1057878219
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057878218}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 12
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1057878220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057878218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1323188090, guid: 2f433824042009943be1767c00adb2ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serialize_conditionSetting:
+    name: conditionSetting
+    byteData: 
+    xmlData: '<xmldata autoCheckType="0" conditionFail="0" needed="0" >
+
+      <_float
+      destroyCheckDelay="1" />
+
+      <_bool repeatCheck="False" />
+
+      <_subarrays>
+
+      <condition>
+
+      </condition>
+
+      </_subarrays>
+
+      </xmldata>
+
+'
+    lookUp:
+      assets: []
+    encrypted: 0
+    stringData: 
+  serialize_startSetting:
+    name: startSettings
+    byteData: 
+    xmlData: '<xmldata>
+
+      <_bool turnStartingObject="False" turnMachineObject="False"
+      turnRestoreMachineObject="False" />
+
+      <machineType>
+
+      <_string>
+
+      <type><![CDATA[GamingIsLove.Makinom.ReferenceAssetSource`1]]></type>
+
+      </_string>
+
+      <settings>
+
+      <_string>
+
+      <_type><![CDATA[GamingIsLove.Makinom.ReferenceAssetSource`1]]></_type>
+
+      </_string>
+
+      </settings>
+
+      </machineType>
+
+      <autoStartSetting>
+
+      <_float
+      autoStartDelay="0" repeatDelay="0" />
+
+      <_bool isStart="True" isEnable="False"
+      isDisable="False" isDestroy="False" isLevelWasLoaded="False" repeatExecution="False"
+      />
+
+      <_string>
+
+      <_type><![CDATA[GamingIsLove.Makinom.Schematics.AutoMachineStartSetting]]></_type>
+
+      </_string>
+
+      <_subarrays>
+
+      <notifyStart>
+
+      </notifyStart>
+
+      </_subarrays>
+
+      </autoStartSetting>
+
+      <interactStartSetting
+      needed="0" >
+
+      <_float maxInteractionDistance="3" maxMouseDistance="3"
+      />
+
+      <_bool isInteract="False" isKeyPress="False" isDrop="False" isMouseDown="False"
+      isMouseDrag="False" isMouseUp="False" isMouseUpAsButton="False" isMouseEnter="False"
+      isMouseOver="False" isMouseExit="False" setInteractionDistance="False" setMouseDistance="False"
+      keyPressInTrigger="False" keyPressWhileColliding="False" startByRoot="False"
+      />
+
+      <_string>
+
+      <_type><![CDATA[GamingIsLove.Makinom.Schematics.InteractionMachineStartSetting]]></_type>
+
+      </_string>
+
+      <inputKey>
+
+      <_string>
+
+      <type><![CDATA[GamingIsLove.Makinom.ReferenceAssetSource`1]]></type>
+
+      </_string>
+
+      <settings>
+
+      <_string>
+
+      <_type><![CDATA[GamingIsLove.Makinom.ReferenceAssetSource`1]]></_type>
+
+      </_string>
+
+      </settings>
+
+      </inputKey>
+
+      <_subarrays>
+
+      <dropCondition>
+
+      </dropCondition>
+
+      </_subarrays>
+
+      </interactStartSetting>
+
+      <moveToInteraction>
+
+      <_float
+      interactionRadius="1" stopDistance="1" />
+
+      <_bool useMoveToInteraction="True"
+      overrideInteractionRadius="False" setInteractionRadius="False" overrideStopDistance="False"
+      overrideMoveToSpeed="False" />
+
+      <moveToSpeed>
+
+      <_string>
+
+      <type><![CDATA[GamingIsLove.Makinom.FloatValue_ValueType`1]]></type>
+
+      </_string>
+
+      <settings>
+
+      <_float
+      value="5" />
+
+      <_string>
+
+      <_type><![CDATA[GamingIsLove.Makinom.FloatValue_ValueType`1]]></_type>
+
+      </_string>
+
+      </settings>
+
+      <mathFunction>
+
+      <_string>
+
+      <type><![CDATA[GamingIsLove.Makinom.Math.NoneMathFunction]]></type>
+
+      </_string>
+
+      <settings>
+
+      <_string>
+
+      <_type><![CDATA[GamingIsLove.Makinom.Math.NoneMathFunction]]></_type>
+
+      </_string>
+
+      </settings>
+
+      </mathFunction>
+
+      </moveToSpeed>
+
+      </moveToInteraction>
+
+      <triggerStartSetting
+      needed="1" layerMask="-1" >
+
+      <_bool isTriggerEnter="False" isTriggerStay="False"
+      isTriggerExit="False" startByCollider="True" startByTrigger="True" startByRoot="False"
+      startByOther="False" limitLayers="False" />
+
+      <_string>
+
+      <_type><![CDATA[GamingIsLove.Makinom.Schematics.TriggerMachineStartSetting]]></_type>
+
+      </_string>
+
+      </triggerStartSetting>
+
+      <collisionStartSetting
+      needed="1" layerMask="-1" >
+
+      <_bool isCollisionEnter="False" isCollisionStay="False"
+      isCollisionExit="False" isParticleCollision="False" isControllerColliderHit="False"
+      startByRoot="False" startByOther="False" limitLayers="False" />
+
+      <_string>
+
+      <_type><![CDATA[GamingIsLove.Makinom.Schematics.CollisionMachineStartSetting]]></_type>
+
+      </_string>
+
+      </collisionStartSetting>
+
+      </xmldata>
+
+'
+    lookUp:
+      assets: []
+    encrypted: 0
+    stringData: 
+  otherCollider: {fileID: 0}
+  otherCollider2D: {fileID: 0}
+  spawnPoint: []
+  waypoints: []
+  serialize_setting:
+    name: settings
+    byteData: 
+    xmlData: '<xmldata sceneID="0" layerMask="-1" roundSpawnPosition="4" maxSpawnPerFrame="50"
+      navMeshSampleAreaMask="-1" >
+
+      <_float appearingChance="100" navMeshSampleDistance="1"
+      />
+
+      <_bool useSceneID="False" isGlobalSceneID="False" rememberCombatants="False"
+      rememberGlobal="False" useAppearingChance="False" appearingChanceFailSetID="False"
+      spawnRandom="False" useChanceSelection="False" respawnRandom="False" disableSpawned="False"
+      destroySpawned="False" spawnAtPosition="False" useNavMeshPositions="True" randomWaypointOrder="False"
+      />
+
+      <_string>
+
+      <spawnerID><![CDATA[]]></spawnerID>
+
+      </_string>
+
+      <battleArena>
+
+      <_float
+      nearestRange="20" />
+
+      <_bool setPosition="False" setRotation="False"
+      useNearest="False" />
+
+      <battleSystem>
+
+      <_bool ownBattleSystem="False"
+      />
+
+      </battleSystem>
+
+      </battleArena>
+
+      <variableChanges>
+
+      <_subarrays>
+
+      <variable>
+
+      </variable>
+
+      </_subarrays>
+
+      </variableChanges>
+
+      <_subarrays>
+
+      <combatant>
+
+      <0
+      quantity="2" >
+
+      <_float respawnTime="60" despawnTime="60" />
+
+      <_bool
+      spawnAll="False" randomRotation="False" setScale="False" respawn="True" despawn="False"
+      blockMoveAI="False" ownMoveAI="False" useFormation="False" />
+
+      <_floatarrays>
+
+      <scale
+      1 1 1 />
+
+      </_floatarrays>
+
+      <combatant>
+
+      <_float chance="100"
+      />
+
+      <_bool useGroup="False" />
+
+      <faction>
+
+      <_string>
+
+      <type><![CDATA[GamingIsLove.Makinom.ReferenceAssetSource`1]]></type>
+
+      </_string>
+
+      <settings>
+
+      <_string>
+
+      <_type><![CDATA[GamingIsLove.Makinom.ReferenceAssetSource`1]]></_type>
+
+      </_string>
+
+      <_asset
+      asset="0" />
+
+      </settings>
+
+      </faction>
+
+      <group>
+
+      <_string>
+
+      <type><![CDATA[GamingIsLove.Makinom.ReferenceAssetSource`1]]></type>
+
+      </_string>
+
+      <settings>
+
+      <_string>
+
+      <_type><![CDATA[GamingIsLove.Makinom.ReferenceAssetSource`1]]></_type>
+
+      </_string>
+
+      </settings>
+
+      </group>
+
+      <member
+      battleGroupIndex="0" >
+
+      <_bool useType="False" useSubTypes="False" learnAbilities="True"
+      useStartInventory="True" useStartEquipment="True" useInitSchematic="True" blockConditionalPrefabs="False"
+      isPassive="False" passiveMustDefeat="False" setBattleGroupIndex="False" useLevelZone="True"
+      classUseLevelZone="True" />
+
+      <combatant>
+
+      <_string>
+
+      <type><![CDATA[GamingIsLove.Makinom.ReferenceAssetSource`1]]></type>
+
+      </_string>
+
+      <settings>
+
+      <_string>
+
+      <_type><![CDATA[GamingIsLove.Makinom.ReferenceAssetSource`1]]></_type>
+
+      </_string>
+
+      <_asset
+      asset="1" />
+
+      </settings>
+
+      </combatant>
+
+      <level type="0"
+      minOffset="-5" maxOffset="5" minRandom="1" maxRandom="99" >
+
+      <_float
+      formulaInitialValue="0" />
+
+      <_bool onlyBattle="False" />
+
+      <_string>
+
+      <key><![CDATA[]]></key>
+
+      </_string>
+
+      </level>
+
+      <classLevel
+      type="0" minOffset="-5" maxOffset="5" minRandom="1" maxRandom="99" >
+
+      <_float
+      formulaInitialValue="0" />
+
+      <_bool onlyBattle="False" />
+
+      <_string>
+
+      <key><![CDATA[]]></key>
+
+      </_string>
+
+      </classLevel>
+
+      </member>
+
+      <requirement>
+
+      <_bool
+      checkDifficulty="False" />
+
+      <variableCondition needed="0" >
+
+      <_subarrays>
+
+      <variable>
+
+      </variable>
+
+      </_subarrays>
+
+      </variableCondition>
+
+      </requirement>
+
+      </combatant>
+
+      <moveAI>
+
+      <_string>
+
+      <type><![CDATA[GamingIsLove.Makinom.ReferenceAssetSource`1]]></type>
+
+      </_string>
+
+      <settings>
+
+      <_string>
+
+      <_type><![CDATA[GamingIsLove.Makinom.ReferenceAssetSource`1]]></_type>
+
+      </_string>
+
+      </settings>
+
+      </moveAI>
+
+      </0>
+
+      </combatant>
+
+      </_subarrays>
+
+      </xmldata>
+
+'
+    lookUp:
+      assets:
+      - {fileID: 11400000, guid: aef72759d13d09c42a618cac9093b193, type: 2}
+      - {fileID: 11400000, guid: a232a16561159974085ac067f85d6297, type: 2}
+    encrypted: 0
+    stringData: 
+--- !u!4 &1057878221
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057878218}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -42.95, y: 4.7608456e-16, z: -13.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1578695207
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,6 +1987,7 @@ GameObject:
   - component: {fileID: 1578695209}
   - component: {fileID: 1578695208}
   - component: {fileID: 1578695212}
+  - component: {fileID: 1578695213}
   m_Layer: 11
   m_Name: Plane
   m_TagString: Untagged
@@ -1527,6 +2113,27 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 8edffe3d68d8c3242945e6586867102e, type: 2}
   m_BuildHeightMesh: 0
+--- !u!95 &1578695213
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578695207}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1db1b40285e6ce841843b60c34a64872, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1651769145
 GameObject:
   m_ObjectHideFlags: 0
@@ -1632,6 +2239,75 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1651769145}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1879857926
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1879857928}
+  - component: {fileID: 1879857927}
+  m_Layer: 0
+  m_Name: Battle area
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1879857927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879857926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 34267123, guid: 2f433824042009943be1767c00adb2ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serialize_conditionSetting:
+    name: conditionSetting
+    byteData: 
+    xmlData: '<xmldata autoCheckType="0" conditionFail="0" needed="0" >
+
+      <_float
+      destroyCheckDelay="1" />
+
+      <_bool repeatCheck="False" />
+
+      <_subarrays>
+
+      <condition>
+
+      </condition>
+
+      </_subarrays>
+
+      </xmldata>
+
+'
+    lookUp:
+      assets: []
+    encrypted: 0
+    stringData: 
+--- !u!4 &1879857928
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879857926}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -13.665028, y: -5.9965935, z: -9.487431}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1643,3 +2319,5 @@ SceneRoots:
   - {fileID: 173012809}
   - {fileID: 1024568658}
   - {fileID: 802972624}
+  - {fileID: 1879857928}
+  - {fileID: 1057878221}
