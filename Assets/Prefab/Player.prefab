@@ -207,5 +207,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cursorRotation: 90
+  attackRange: 2
   cursorSize: {x: 0.5, y: 0.5, z: 0.5}
   cursorPrefab: {fileID: 3259214778881141499, guid: dd8b3372ce5cfd84794d6d47f42169c5, type: 3}
+  walkingSpeed: 3.5
+  runningSpeed: 6

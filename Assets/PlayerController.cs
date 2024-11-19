@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
     public float cursorRotation = 0f; // Rotation of the cursor
+    public float attackRange;
     public Vector3 cursorSize = new Vector3(1f, 1f, 1f); // Size of the cursor
 
     private Animator animator;
@@ -46,7 +48,6 @@ public class PlayerController : MonoBehaviour
                 {
                     // Set the current target to the hit enemy
                     SetTarget(hit.collider.gameObject);
-                    UpdateCursor(hit);
                 }
                 // Check if the raycast hit a valid NavMesh
                 else if (hit.collider.CompareTag("Ground")) // Make sure the object has the "NavMesh" tag
@@ -54,7 +55,9 @@ public class PlayerController : MonoBehaviour
                     // Set the destination of the NavMeshAgent to the hit point
                     navMeshAgent.SetDestination(hit.point);
 
-                    UpdateCursor(hit);
+                    UpdateCursor(hit.point);
+
+                    isTargeting = false;
                 }
             }
 
@@ -87,6 +90,12 @@ public class PlayerController : MonoBehaviour
 
         // Set the "isWalking" bool based on the distance to the destination
         animator.SetBool("isWalking", distanceToDestination > 1f);
+
+        // If we're targeting an enemy, move towards and attack it
+        if (isTargeting && currentTarget != null)
+        {
+            MoveToTarget();
+        }
     }
 
     void SetTarget(GameObject target)
@@ -96,10 +105,28 @@ public class PlayerController : MonoBehaviour
         navMeshAgent.isStopped = false; // Make sure the agent is not stopped*/
     }
 
-    private void UpdateCursor(RaycastHit hit)
+    // Moves the player towards the current target
+    void MoveToTarget()
+    {
+        if (currentTarget != null)
+        {
+            navMeshAgent.SetDestination(currentTarget.transform.position); // Move towards the target
+
+            UpdateCursor(currentTarget.transform.position);
+
+            // Check if we are close enough to attack the enemy
+            if (Vector3.Distance(transform.position, currentTarget.transform.position) < attackRange)
+            {
+                navMeshAgent.SetDestination(gameObject.transform.position);
+            }
+
+        }
+    }
+
+    private void UpdateCursor(Vector3 position)
     {
         // Raise the hit point by 1 unit on the Y-axis
-        Vector3 raisedHitPoint = hit.point + new Vector3(0, 0.2f, 0);
+        Vector3 raisedHitPoint = position + new Vector3(0, 0.2f, 0);
 
         // Place the cursor at the hit point
         if (currentCursor != null)
