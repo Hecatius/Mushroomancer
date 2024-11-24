@@ -8,16 +8,17 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField]
     private bool playFirstDialogueOnGameStart;
     public Dialogue[] dialogues;
-    
+
     void Start()
-    {   if (playFirstDialogueOnGameStart)
+    {
+        if (playFirstDialogueOnGameStart)
         {
             TriggerDialogue(0);
         }
     }
 
-    public void TriggerDialogue (int index)
-    
+    public void TriggerDialogue(int index)
+
     {
         //Exemple de call de l;a fonction dans votre code
         //FindObjectOfType<DialogueTrigger>().TriggerDialogue(0) //affiche le premier dialogue changer le 0 si vous voulez faire apparaitre un autre dialogue.

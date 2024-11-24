@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class DialogueManagerScript2: MonoBehaviour
+public class DialogueManagerScript2 : MonoBehaviour
 {
     [Header("Dialogue Settings")]
     public GameObject nameText;
@@ -18,7 +18,7 @@ public class DialogueManagerScript2: MonoBehaviour
     [Header("Typing Speed")]
     [SerializeField]
     [Tooltip("Adjust the typing speed in seconds for each character.")]
-    [Range(0f,0.25f)]
+    [Range(0f, 0.25f)]
     private float typingSpeed;
 
     [SerializeField]
@@ -27,7 +27,7 @@ public class DialogueManagerScript2: MonoBehaviour
     private MonoBehaviour[] scriptToDisableDuringDialogue;
 
     [SerializeField] private Image raycastBlocker;
-    
+
     private bool isTyping;
     private string currentSentence; // Store the current sentence
     void Awake()
@@ -56,8 +56,8 @@ public class DialogueManagerScript2: MonoBehaviour
             }
         }
         if (DialogueMode)
-        {   
-            
+        {
+
             foreach (GameObject thingsToHide in objectToHideDuringDialogue)
             {
                 if (thingsToHide != null)
@@ -65,7 +65,7 @@ public class DialogueManagerScript2: MonoBehaviour
                     thingsToHide.SetActive(false);
                 }
             }
-            
+
             foreach (MonoBehaviour thingsToHide in scriptToDisableDuringDialogue)
             {
                 if (thingsToHide != null)
@@ -73,9 +73,10 @@ public class DialogueManagerScript2: MonoBehaviour
                     thingsToHide.enabled = false;
                 }
             }
-        } else
+        }
+        else
         {
-           
+
             foreach (GameObject thingsToHide in objectToHideDuringDialogue)
             {
                 if (thingsToHide != null)
@@ -83,8 +84,8 @@ public class DialogueManagerScript2: MonoBehaviour
                     thingsToHide.SetActive(true);
                 }
             }
-            
-            
+
+
             foreach (MonoBehaviour thingsToHide in scriptToDisableDuringDialogue)
             {
                 if (thingsToHide != null)
@@ -92,7 +93,7 @@ public class DialogueManagerScript2: MonoBehaviour
                     thingsToHide.enabled = true;
                 }
             }
-            
+
         }
     }
 
@@ -101,31 +102,31 @@ public class DialogueManagerScript2: MonoBehaviour
         currentDialogue = dialogue;
 
         animator.SetBool("IsOpen", true);
-        
+
         nameText.GetComponent<TMP_Text>().text = dialogue.name;
 
         sentences.Clear();
-        
+
         raycastBlocker.gameObject.SetActive(true);
 
-        GameManager.Instance.IsAnyDialogueBeingShowed = true;
+        //GameManager.Instance.IsAnyDialogueBeingShowed = true;
 
         foreach (string sentence in dialogue.sentences)
         {
             string text = sentence;
-            
-            if (dialogue.isLocalized)
+
+            /*if (dialogue.isLocalized)
             {
                 text = ChickenLocalization.Instance.GetTextFromKey(sentence);
-            }
-            
+            }*/
+
             sentences.Enqueue(text);
         }
 
         DisplayNextSentence();
         DialogueMode = true;
 
-        
+
     }
 
     public void DisplayNextSentence()
@@ -145,21 +146,21 @@ public class DialogueManagerScript2: MonoBehaviour
     {
         dialogueText.GetComponent<TMP_Text>().text = "";
         isTyping = true; // Set the typing flag to true
-        
-    
+
+
         foreach (char letter in sentence)
         {
-        
+
             // If not inside asterisks, append the letter directly to the dialogue text
             dialogueText.GetComponent<TMP_Text>().text += letter;
-        
-            AudioManager.Instance.SFX_Dialogue_WrittenText();
+
+            //AudioManager.Instance.SFX_Dialogue_WrittenText();
 
             yield return new WaitForSeconds(typingSpeed); // Add a delay between characters
         }
 
         isTyping = false; // Set the typing flag to false when typing is complete
-}
+    }
 
 
     void SkipToSentenceEnd()
@@ -185,10 +186,10 @@ public class DialogueManagerScript2: MonoBehaviour
         {
             currentDialogue.m_OnClear.Invoke();
         }
-        
+
         raycastBlocker.gameObject.SetActive(false);
-        
-        GameManager.Instance.IsAnyDialogueBeingShowed = false;
+
+        //GameManager.Instance.IsAnyDialogueBeingShowed = false;
     }
 
     void ActivateGameObjects()
