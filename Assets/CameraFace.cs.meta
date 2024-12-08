@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/CameraFace.cs.meta
+guid: 99b563d0b7f754a49829d2eb5abc1f20
+========
+guid: 3d3d6ff7c49fccc4aa8f68065ce2bc4d
+>>>>>>>> origin/Attaque2:Assets/Scripts/Dialogue Trigger.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
