@@ -38,6 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -227,89 +228,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 81708752}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &101296583
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 101296584}
-  - component: {fileID: 101296585}
-  m_Layer: 0
-  m_Name: Spawn Point 0
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &101296584
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 101296583}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.05, y: 0.42, z: -53.94}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 173012809}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &101296585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 101296583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1562151128, guid: bfb06eec059d3a345ac43927a4389437, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  useSceneID: 1
-  sceneID: 0
-  serialize_setting:
-    name: settings
-    byteData: 
-    xmlData: '<xmldata layerMask="-1" >
-
-      <_float distance="100" />
-
-      <_bool
-      placeOnGround="True" />
-
-      <_floatarrays>
-
-      <offset 0 0 0 />
-
-      </_floatarrays>
-
-      <useRotation>
-
-      <_bool
-      x="False" y="False" z="False" />
-
-      </useRotation>
-
-      <useScale>
-
-      <_bool
-      x="False" y="False" z="False" />
-
-      </useScale>
-
-      </xmldata>
-
-'
-    lookUp:
-      assets: []
-    encrypted: 0
-    stringData: 
 --- !u!1 &108388319
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,65 +320,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 42.469, y: -90.134, z: 0}
---- !u!1 &173012807
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 173012809}
-  - component: {fileID: 173012808}
-  m_Layer: 0
-  m_Name: ORK Game Starter
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &173012808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 173012807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 641052753, guid: 2f433824042009943be1767c00adb2ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  useAssetBundle: 0
-  project: {fileID: 11400000, guid: 19704a2d0261a274cb65450b05c90283, type: 2}
-  assetBundle:
-    assetName: 
-    assetBundleName: 
-    pathOrigin: 1
-    path: 
-    loadType: 0
-    loadAsync: 0
-  startGame: 1
-  schematicAsset: {fileID: 0}
-  loadStartMenuScene: 0
-  callStartMenu: 0
-  callAfter: 0
---- !u!4 &173012809
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 173012807}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.30119714, y: -6.1609746e-16, z: 27.746561}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 101296584}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &214114800
 GameObject:
   m_ObjectHideFlags: 0
@@ -985,7 +844,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serialize_conditionSetting:
     name: conditionSetting
-    byteData: 
+    byteData: []
     xmlData: '<xmldata autoCheckType="0" conditionFail="0" needed="0" >
 
       <_float
@@ -1008,9 +867,10 @@ MonoBehaviour:
       assets: []
     encrypted: 0
     stringData: 
+  isInvoking: 0
   serialize_baseSettings:
     name: settings
-    byteData: 
+    byteData: []
     xmlData: '<xmldata>
 
       <assetSetting executionType="0" updateType="0" priority="0"
@@ -1089,9 +949,12 @@ MonoBehaviour:
     material: []
     physicMaterial: []
     physicsMaterial2D: []
+  machineStarted: 0
+  isDestroyed: 0
+  storedRotation: {x: 0, y: 0, z: 0, w: 1}
   serialize_setting:
     name: settings
-    byteData: 
+    byteData: []
     xmlData: '<xmldata>
 
       <_bool useAutoStopDistance="True" />
@@ -1208,6 +1071,9 @@ MonoBehaviour:
       - {fileID: 358549845}
     encrypted: 0
     stringData: 
+  registered: 0
+  isInTrigger: 0
+  isColliding: 0
 --- !u!1 &1578695207
 GameObject:
   m_ObjectHideFlags: 0
@@ -1459,5 +1325,4 @@ SceneRoots:
   - {fileID: 781523155}
   - {fileID: 1578695211}
   - {fileID: 478037020}
-  - {fileID: 173012809}
   - {fileID: 1024568658}

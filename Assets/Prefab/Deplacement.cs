@@ -30,6 +30,8 @@ public class Deplacement : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
         // Initially set the agent's speed to walking speed
         navMeshAgent.speed = walkingSpeed;
+
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -75,6 +77,25 @@ public class Deplacement : MonoBehaviour
                     ResetTarget();
                 }
             }
+            // Handle the player's movement speed (walking vs running)
+            if (Input.GetKey(KeyCode.LeftShift)) // Running with shift key
+            {
+                navMeshAgent.speed = runningSpeed;
+                animator.SetBool("isRunning", true);
+                animator.SetBool("isWalking", false);
+
+            }
+            else
+            {
+                navMeshAgent.speed = walkingSpeed;
+                animator.SetBool("isRunning", false);
+                animator.SetBool("isWalking", true);
+            }
+        }
+        else
+        {
+            animator.SetBool("isRunning", false);
+            animator.SetBool("isWalking", false);
         }
 
         // If we're targeting an enemy, move towards and attack it
@@ -88,15 +109,8 @@ public class Deplacement : MonoBehaviour
             }
         }
 
-        // Handle the player's movement speed (walking vs running)
-        if (Input.GetKey(KeyCode.LeftShift)) // Running with shift key
-        {
-            navMeshAgent.speed = runningSpeed;
-        }
-        else
-        {
-            navMeshAgent.speed = walkingSpeed;
-        }
+        
+
     }
 
     // Sets the target for the player (enemy)

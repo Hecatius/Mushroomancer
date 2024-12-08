@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 7116999958482220853}
   - component: {fileID: 419776102403730420}
   - component: {fileID: 3115456606734013225}
-  - component: {fileID: 6052200140264147293}
+  - component: {fileID: 617372702617844971}
+  - component: {fileID: 6112703083209367631}
+  - component: {fileID: 6016810688584834383}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -148,43 +150,26 @@ MonoBehaviour:
   cursorSize: {x: 0.5, y: 0.5, z: 0.5}
   walkingSpeed: 3.5
   runningSpeed: 6
---- !u!114 &-8938610893131206527
-MonoBehaviour:
+  defaultStoppingDistance: 0
+  attackStoppingDistance: 0
+--- !u!95 &6016810688584834383
+Animator:
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8562136209041870635}
   m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 100
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 1
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!114 &6052200140264147293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8562136209041870635}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04ff222a0f330024fbbc11b9166061fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkDuration: 2
-  speed: 2
-  Player: {fileID: 0}
-  Footsteps1: {fileID: 8300000, guid: f94cd81dc3562c14e9bcb40b81a99f13, type: 3}
-  Footsteps2: {fileID: 8300000, guid: 35d9dc7f101edc546bbb878df36f23d7, type: 3}
-
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: df02ad16a3f956745937ec75a086198a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
