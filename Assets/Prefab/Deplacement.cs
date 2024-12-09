@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,9 @@ public class Deplacement : MonoBehaviour
 
     public float walkingSpeed = 3.5f; // Speed for walking
     public float runningSpeed = 6f; // Speed for running
+    private float attackCooldown = 0f;
+    public float attackSpeed = 1.0f;
+    public float baseDamage = 1f;
 
     public float defaultStoppingDistance = 0f; // Default stop distance
 
@@ -45,12 +49,10 @@ public class Deplacement : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 // If we clicked on an enemy, target the enemy
-                if (hit.collider.CompareTag("Enemy"))
+                if (hit.collider.CompareTag("Ennemy") || hit.collider.CompareTag("NPC") )
                 {
                     // Set the current target to the hit enemy
                     SetTarget(hit.collider.gameObject);
-
-                    
                 }
                 // If we clicked on the NavMesh or an area (not an enemy), move to the clicked position
                 else if (hit.collider.CompareTag("Ground"))
@@ -105,7 +107,22 @@ public class Deplacement : MonoBehaviour
 
             // Check if we are close enough to attack the enemy
             if (Vector3.Distance(transform.position, currentTarget.transform.position) <= attackStoppingDistance)
-            {
+            {   
+                if (currentTarget.tag == "Ennemy") 
+                {
+                    if (attackCooldown > 0)
+                    {
+                        attackCooldown -= Time.deltaTime;
+                    }
+
+                    if (attackCooldown <= 0)
+                    {
+
+                        Debug.Log("je suis proche");
+                        Attack(currentTarget);
+                        attackCooldown = 1f / attackSpeed;
+                    }
+                }
             }
         }
 
@@ -119,7 +136,6 @@ public class Deplacement : MonoBehaviour
         currentTarget = target;
         isTargeting = true;
         navMeshAgent.isStopped = false; // Make sure the agent is not stopped
-
 
     }
 
@@ -160,7 +176,9 @@ public class Deplacement : MonoBehaviour
     // Attack
     void Attack(GameObject target)
     {
-        target.GetComponent<stats>().TakeDamage(1f);
+        animator.SetTrigger("Attack");
+
+        target.GetComponent<stats>().TakeDamage(baseDamage);
     }
 }
 

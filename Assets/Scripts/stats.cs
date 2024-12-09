@@ -6,21 +6,22 @@ using UnityEngine.UI;
 public class stats : MonoBehaviour
 
 {
-    public float maxHealth = 100f;
-    private float currentHealth;
+    public float maxHealth = 10f;
+    public float currentHealth;
     [SerializeField] private GameObject healthBar;
 
     void Start()
     {
         currentHealth = maxHealth;
         UpdateHealthBar();
+        healthBar.GetComponent<Slider>().maxValue = maxHealth;
     }
 
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         UpdateHealthBar();
+        Debug.Log("oww");
 
         if (currentHealth <= 0)
         {

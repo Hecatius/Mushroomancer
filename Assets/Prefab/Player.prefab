@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 617372702617844971}
   - component: {fileID: 6112703083209367631}
   - component: {fileID: 6016810688584834383}
+  - component: {fileID: 7754230796583416684}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -151,7 +152,7 @@ MonoBehaviour:
   walkingSpeed: 3.5
   runningSpeed: 6
   defaultStoppingDistance: 0
-  attackStoppingDistance: 0
+  attackStoppingDistance: 3
 --- !u!95 &6016810688584834383
 Animator:
   serializedVersion: 5
@@ -173,3 +174,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7754230796583416684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8562136209041870635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6350ff9edfd0b489a199a4665c76e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

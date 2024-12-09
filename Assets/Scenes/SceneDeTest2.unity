@@ -812,6 +812,22 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2594397353176348267, guid: cb9ba5ffdafb10e46a96f429be6aaa02, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2594397353176348267, guid: cb9ba5ffdafb10e46a96f429be6aaa02, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2594397353176348267, guid: cb9ba5ffdafb10e46a96f429be6aaa02, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2594397353176348267, guid: cb9ba5ffdafb10e46a96f429be6aaa02, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000015258789
+      objectReference: {fileID: 0}
     - target: {fileID: 7116999958482220853, guid: cb9ba5ffdafb10e46a96f429be6aaa02, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.993535
@@ -852,13 +868,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8239191498074510092, guid: cb9ba5ffdafb10e46a96f429be6aaa02, type: 3}
+      propertyPath: m_Value
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239191498074510092, guid: cb9ba5ffdafb10e46a96f429be6aaa02, type: 3}
+      propertyPath: m_MaxValue
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 8562136209041870635, guid: cb9ba5ffdafb10e46a96f429be6aaa02, type: 3}
       propertyPath: m_Name
-      value: Ennemi
+      value: Ennemy
       objectReference: {fileID: 0}
     - target: {fileID: 8562136209041870635, guid: cb9ba5ffdafb10e46a96f429be6aaa02, type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: Ennemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1024,6 +1048,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8562136209041870635, guid: e84a6bafc253a67478621ec1f8123a51, type: 3}
       propertyPath: m_Name
+      value: NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 8562136209041870635, guid: e84a6bafc253a67478621ec1f8123a51, type: 3}
+      propertyPath: m_TagString
       value: NPC
       objectReference: {fileID: 0}
     m_RemovedComponents:

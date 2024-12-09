@@ -485,7 +485,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.425
+  m_Value: 0.692
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -502,6 +502,7 @@ GameObject:
   - component: {fileID: 3115456606734013225}
   - component: {fileID: 7032139163005566385}
   - component: {fileID: 3998183283491982639}
+  - component: {fileID: 3711362446676701165}
   m_Layer: 0
   m_Name: Ennemi
   m_TagString: Untagged
@@ -634,3 +635,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99b563d0b7f754a49829d2eb5abc1f20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3711362446676701165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8562136209041870635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9055f89accc53184ea4861b3f50ffd52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  healthBar: {fileID: 8479257735098979417}
