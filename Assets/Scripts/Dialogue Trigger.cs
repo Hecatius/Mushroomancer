@@ -24,7 +24,7 @@ public class DialogueTrigger : MonoBehaviour
         //FindObjectOfType<DialogueTrigger>().TriggerDialogue(0) //affiche le premier dialogue changer le 0 si vous voulez faire apparaitre un autre dialogue.
         if (index >= 0 && index < dialogues.Length)
         {
-            GetComponent<DialogueManagerScript2>().StartDialogue(dialogues[index]);
+            FindObjectOfType<DialogueManagerScript2>().StartDialogue(dialogues[index]);
         }
         else
         {

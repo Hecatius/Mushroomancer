@@ -122,6 +122,9 @@ public class Deplacement : MonoBehaviour
                         Attack(currentTarget);
                         attackCooldown = 1f / attackSpeed;
                     }
+                } else if(currentTarget.tag == "NPC")
+                {
+                    currentTarget.GetComponent<DialogueTrigger>().TriggerDialogue(0);
                 }
             }
         }
