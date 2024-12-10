@@ -25,15 +25,13 @@ public class DialogueManagerScript2 : MonoBehaviour
     private GameObject[] objectToHideDuringDialogue;
     [SerializeField]
     private MonoBehaviour[] scriptToDisableDuringDialogue;
-
-    [SerializeField] private Image raycastBlocker;
-
     private bool isTyping;
     private string currentSentence; // Store the current sentence
+
     void Awake()
     {
+        animator = GetComponent<Animator>();
         sentences = new Queue<string>();
-        raycastBlocker.gameObject.SetActive(false);
     }
 
     void Update()
@@ -103,11 +101,13 @@ public class DialogueManagerScript2 : MonoBehaviour
 
         animator.SetBool("IsOpen", true);
 
-        nameText.GetComponent<TMP_Text>().text = dialogue.name;
+        if (nameText != null)
+        {
+            nameText.GetComponent<TMP_Text>().text = dialogue.name;
+        }
 
         sentences.Clear();
 
-        raycastBlocker.gameObject.SetActive(true);
 
         //GameManager.Instance.IsAnyDialogueBeingShowed = true;
 
@@ -186,8 +186,6 @@ public class DialogueManagerScript2 : MonoBehaviour
         {
             currentDialogue.m_OnClear.Invoke();
         }
-
-        raycastBlocker.gameObject.SetActive(false);
 
         //GameManager.Instance.IsAnyDialogueBeingShowed = false;
     }
