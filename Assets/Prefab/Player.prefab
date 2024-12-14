@@ -32,8 +32,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.4, y: 1.01, z: 0.6139145}
-  m_LocalScale: {x: 4.456, y: 4.456, z: 4.456}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -149,8 +149,10 @@ MonoBehaviour:
   cursorPrefab: {fileID: 0}
   cursorRotation: 90
   cursorSize: {x: 0.5, y: 0.5, z: 0.5}
-  walkingSpeed: 3.5
-  runningSpeed: 6
+  walkingSpeed: 6
+  runningSpeed: 10
+  attackSpeed: 1
+  baseDamage: 1
   defaultStoppingDistance: 0
   attackStoppingDistance: 3
 --- !u!95 &6016810688584834383
