@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: affae7bca64ab1946ba80817e026ab2a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - audioSource: {instanceID: 0}
+  - Minstrel1: {fileID: 8300000, guid: 51c76c56f2cadd74d984b259be841625, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
