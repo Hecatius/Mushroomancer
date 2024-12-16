@@ -15,7 +15,7 @@ public class CameraFace : MonoBehaviour
     {
         // Make the sprite face the camera while keeping the original orientation on the Z-axis
         var cameraDirection = Camera.main.transform.position - transform.position;
-        cameraDirection.x = 0; // Lock the rotation on the y-axis if it's a 2D sprite
+        //cameraDirection.x = 0; // Lock the rotation on the y-axis if it's a 2D sprite
 
         transform.rotation = Quaternion.LookRotation(-cameraDirection);
     }

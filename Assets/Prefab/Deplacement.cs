@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using static UnityEngine.PlayerLoop.PostLateUpdate;
 
 public class Deplacement : MonoBehaviour
 
@@ -23,25 +24,33 @@ public class Deplacement : MonoBehaviour
 
     private NavMeshAgent navMeshAgent;
     private Animator animator;
+    private SpriteRenderer spriteRenderer;
 
     private GameObject currentCursor;
     private GameObject currentTarget; // The currently targeted enemy
+    public GameObject dialogueManager;
     private bool isTargeting = false; // Is the player targeting an enemy?
 
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         // Get the NavMeshAgent component
         navMeshAgent = GetComponent<NavMeshAgent>();
         // Initially set the agent's speed to walking speed
         navMeshAgent.speed = walkingSpeed;
 
         animator = GetComponent<Animator>();
+
+        if (dialogueManager == null ) 
+        {
+            Debug.Log("Le dialogue manager n'est pas attacher");
+        }
     }
 
     void Update()
     {
         // If the right mouse button is being held down (Input.GetMouseButton(1))
-        if (Input.GetMouseButton(1)) // Right-click and hold (Mouse button 1 is right-click)
+        if (Input.GetMouseButton(1) && dialogueManager.GetComponent<DialogueManagerScript2>().DialogueMode != true) // Right-click and hold (Mouse button 1 is right-click)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -49,7 +58,7 @@ public class Deplacement : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 // If we clicked on an enemy, target the enemy
-                if (hit.collider.CompareTag("Ennemy") || hit.collider.CompareTag("NPC") )
+                if (hit.collider.CompareTag("Ennemy") || hit.collider.CompareTag("NPC"))
                 {
                     // Set the current target to the hit enemy
                     SetTarget(hit.collider.gameObject);
@@ -66,7 +75,7 @@ public class Deplacement : MonoBehaviour
                     {
                         Destroy(currentCursor); // Destroy the previous cursor (if any)
                     }
-                    currentCursor = Instantiate(cursorPrefab, hit.point + new Vector3(0,0.1f,0), Quaternion.identity);
+                    currentCursor = Instantiate(cursorPrefab, hit.point + new Vector3(0, 0.1f, 0), Quaternion.identity);
                     currentCursor.transform.rotation = Quaternion.Euler(cursorRotation, 0, 0); // Apply rotation
                     currentCursor.transform.localScale = cursorSize; // Apply size
 
@@ -79,13 +88,16 @@ public class Deplacement : MonoBehaviour
                     ResetTarget();
                 }
             }
-            // Handle the player's movement speed (walking vs running)
+        }
+
+        // Handle the player's movement speed (walking vs running)
+        if (navMeshAgent.velocity.magnitude > 0.1f) // Vérifie si le personnage se déplace
+        {
             if (Input.GetKey(KeyCode.LeftShift)) // Running with shift key
             {
                 navMeshAgent.speed = runningSpeed;
                 animator.SetBool("isRunning", true);
                 animator.SetBool("isWalking", false);
-
             }
             else
             {
@@ -100,8 +112,9 @@ public class Deplacement : MonoBehaviour
             animator.SetBool("isWalking", false);
         }
 
+
         // If we're targeting an enemy, move towards and attack it
-        if (isTargeting && currentTarget != null)
+        if (isTargeting && currentTarget != null && dialogueManager.GetComponent<DialogueManagerScript2>().DialogueMode != true)
         {
             MoveToTarget();
 
@@ -124,13 +137,44 @@ public class Deplacement : MonoBehaviour
                     }
                 } else if(currentTarget.tag == "NPC")
                 {
+                    
                     currentTarget.GetComponent<DialogueTrigger>().TriggerDialogue(0);
+                    ResetTarget();
                 }
             }
         }
 
-        
+        UpdateSpriteDirection(); // Updates the sprite orientation
 
+    }
+
+    private void UpdateSpriteDirection()
+    {
+        Vector3 referencePosition;
+
+        // Determine the reference position: either the current target or the cursor
+        if (currentTarget != null)
+        {
+            referencePosition = currentTarget.transform.position;
+        }
+        else if (currentCursor != null)
+        {
+            referencePosition = currentCursor.transform.position;
+        }
+        else
+        {
+            return; // No target or cursor to reference
+        }
+
+        // Convert world positions to camera-local positions
+        Vector3 playerScreenPos = Camera.main.WorldToScreenPoint(transform.position);
+        Vector3 referenceScreenPos = Camera.main.WorldToScreenPoint(referencePosition);
+
+        // Determine the horizontal direction in screen space
+        float directionX = referenceScreenPos.x - playerScreenPos.x;
+
+        // Flip the sprite based on screen-space direction
+        spriteRenderer.flipX = directionX < 0;
     }
 
     // Sets the target for the player (enemy)
@@ -174,6 +218,7 @@ public class Deplacement : MonoBehaviour
 
            
         }
+
     }
 
     // Attack
